@@ -80,22 +80,22 @@ body {
 
 /* ribbon style */
 
- #main .ribbon-wrapper {
+ .ribbon-wrapper {
     position: relative;
 }
-  #main .ribbon-front {
+  .ribbon-front {
     background-color: #000; 
     opacity: 0.9;
     height: 160px;
-    width: 1080px;
+    width: 1280px;
     position: relative;
     left:-100px;
     z-index: 2;
 }
 
-  #main .ribbon-front,
-  #main .ribbon-back-left,
-  #main .ribbon-back-right
+  .ribbon-front,
+  .ribbon-back-left,
+  .ribbon-back-right
 {
     -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
     -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
@@ -103,10 +103,10 @@ body {
     -o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
 }
 
-  #main .ribbon-edge-topleft,
-  #main .ribbon-edge-topright,
-  #main .ribbon-edge-bottomleft,
-  #main .ribbon-edge-bottomright {
+  .ribbon-edge-topleft,
+  .ribbon-edge-topright,
+  .ribbon-edge-bottomleft,
+  .ribbon-edge-bottomright {
     position: absolute;
     z-index: 1;
     border-style:solid;
@@ -114,44 +114,44 @@ body {
     width:0px;
 }
 
-  #main .ribbon-edge-topleft,
-  #main .ribbon-edge-topright {
+  .ribbon-edge-topleft,
+  .ribbon-edge-topright {
 }
 
-  #main .ribbon-edge-bottomleft,
-  #main .ribbon-edge-bottomright {
+  .ribbon-edge-bottomleft,
+  .ribbon-edge-bottomright {
     top: 160px;
 }
 
-  #main .ribbon-edge-topleft,
-  #main .ribbon-edge-bottomleft {
+  .ribbon-edge-topleft,
+  .ribbon-edge-bottomleft {
     left: -100px;
     border-color: transparent #333333 transparent transparent;
 }
 
-  #main .ribbon-edge-topleft {
+  .ribbon-edge-topleft {
     top: 0px;
     border-width: 0px 100px 0 0;
 }
-  #main .ribbon-edge-bottomleft {
+  .ribbon-edge-bottomleft {
     border-width: 0 100px 30px 0;
 }
 
-  #main .ribbon-edge-topright,
-  #main .ribbon-edge-bottomright {
-    left: 880px;
+  .ribbon-edge-topright,
+  .ribbon-edge-bottomright {
+    left: 1080px;
     border-color: transparent transparent transparent #333333;
 }
 
-  #main .ribbon-edge-topright {
+  .ribbon-edge-topright {
     top: 0px;
     border-width: 0px 0 0 100px;
 }
-  #main .ribbon-edge-bottomright {
+  .ribbon-edge-bottomright {
     border-width: 0 0 30px 100px;
 }
 
-  #main .ribbon-back-left {
+  .ribbon-back-left {
     position: absolute;
     top: 30px;
     left: 0px;
@@ -160,7 +160,7 @@ body {
         z-index: 0;
 }
 
-  #main .ribbon-back-right {
+  .ribbon-back-right {
     position: absolute;
     top: 30px;
     right: 0px;
@@ -310,7 +310,7 @@ body {
     margin: 0 auto;
     padding-top: 10px;
     font-size: 18px;
-    font-family: 'Puritan', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .item-description {
@@ -340,7 +340,7 @@ body {
 }
 
 #item-predictions h1 {
-    font-family: 'Puritan', 'Helvetica Neue', 'Helvetica';
+    font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica';
     font-size: 20px;
     padding-bottom: 3px;
     margin-bottom: 8px;
@@ -409,15 +409,23 @@ body {
 }
 
 #welcome-title {
-    font-family: 'Puritan', 'Helvetica Neue', 'Helvetica', 'Arial';
+    font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Arial';
     color: white;
     padding-top: 20px;
     text-align: center;
     font-size: 48px;
 }
 
+#welcome-title em {
+    color: #50A1CB;
+}
+
+#welcome-title b {
+    color: #C2FBE8;
+}
+
 #welcome-sub {
-    font-family: 'Puritan', 'Helvetica Neue', 'Helvetica', 'Arial';
+    font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Arial';
     color: white;
     padding-top: 15px;
     text-align: center;
@@ -425,7 +433,7 @@ body {
 }
 
 #welcome-sub em {
-    color: #BD46DB;
+    color: #50A1CB;
 }
 
 #world-map {
@@ -486,4 +494,11 @@ body {
 
 #language-slide, #something-slide, #lol-slide {
     left: 1818px;
+}
+
+#show-title {
+    font-family: 'Source Sans Pro', 'Helvetica', sans-serif;
+    font-size: 30pt;
+    position: relative;
+    left: 40px;
 }

@@ -16,7 +16,7 @@ YUI().use('app', 'transition', 'node-event-delegate', function (Y) {
             slideOne.transition({
                 easing: 'ease-out',
                 duration: 0.75,
-                left: '-1080px'
+                left: '-1280px'
             });
             slideTwo.transition({
                 easing: 'ease-out',
