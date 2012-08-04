@@ -1,5 +1,6 @@
 body {
     background: url(../img/cork_1.png);
+    overflow: hidden;
 }
 
 #header {
@@ -66,7 +67,8 @@ body {
 
 .slide {
     width: 1080px;
-    margin: 0 auto;
+    position: absolute;
+    left: 218px;
     padding-top: 40px;
     height: 600px;
     background: #F0F0F0;
@@ -475,5 +477,13 @@ body {
 }
 
 .hidden {
-    display: none;
+    visibility: hidden;
+}
+
+#intro-slide {
+    left: 218px;
+}
+
+#language-slide, #something-slide, #lol-slide {
+    left: 1818px;
 }
