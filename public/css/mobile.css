@@ -1,5 +1,37 @@
-#header {
+.header {
     width: 100%;
-    height: 30px;
-    background-color: red;
+    height: 50px;
+    background: #7f7f7f;
+    background: -moz-linear-gradient(top, #7f7f7f 1%, #4f4f4f 2%, #363636 44%, #262626 54%, #262626 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#7f7f7f), color-stop(2%,#4f4f4f), color-stop(44%,#363636), color-stop(54%,#262626), color-stop(100%,#262626));
+    background: -webkit-linear-gradient(top, #7f7f7f 1%,#4f4f4f 2%,#363636 44%,#262626 54%,#262626 100%);
+    background: -o-linear-gradient(top, #7f7f7f 1%,#4f4f4f 2%,#363636 44%,#262626 54%,#262626 100%);
+    background: -ms-linear-gradient(top, #7f7f7f 1%,#4f4f4f 2%,#363636 44%,#262626 54%,#262626 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7f7f7f', endColorstr='#262626',GradientType=0 );
+    background: linear-gradient(top, #7f7f7f 1%,#4f4f4f 2%,#363636 44%,#262626 54%,#262626 100%);
+    text-shadow: 1px 1px 1px black; 
+}
+
+.header h2 {
+    position: relative;
+    top: 15px;
+    font-size: 18px;
+    padding: 10px;
+    display: inline;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.slide {
+    display: none;
+}
+
+.active {
+    display: inline;
 }

@@ -35,7 +35,7 @@ app.get('/', function (req, res) {
     if (uaTest.isMobile(req)) {
         res.render('mobile.html');
     } else {
-        res.render('index.html');
+        res.render('mobile.html');
     }
 });
 
@@ -47,16 +47,6 @@ var server = app.listen(80),
     io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function (socket) {
-    socket.on('products:read', function (data, callback) {
-        socket.emit('products:read', {data: movieDB.toJSON()});
-    });
-
-    socket.on('users:construct', function (data, callback) {
-        userDB.add(data);
-        socket.emit('users:construct', {data: data});
-        socket.broadcast.emit('users:construct', {data: data});
-    });
-
     socket.on('signals:update', function (data, callback) {
         socket.emit('signals/' + data.id + ':update', {data: data});
         socket.broadcast.emit('signals/' + data.id + ':update', {data: data});

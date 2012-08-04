@@ -1,16 +1,71 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/mobile.css">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
+    <script>
+      (function(a){var b=a.document;if(!location.hash&&a.addEventListener){window.scrollTo(0,1);var c=1,d=function(){return a.pageYOffset||"CSS1Compat"===b.compatMode&&b.documentElement.scrollTop||b.body.scrollTop||0},e=setInterval(function(){b.body&&(clearInterval(e),c=d(),a.scrollTo(0,1===c?0:1))},15);a.addEventListener("load",function(){setTimeout(function(){20>d()&&a.scrollTo(0,1===c?0:1)},0)})}})(this);
+    </script>
+    <script src="http://yui.yahooapis.com/3.6.0/build/yui/yui-min.js"></script>
+    <script>
+    YUI().use('node', function (Y) {
+        var addHandler = function () {
+            Y.one('body').once('click', function (e) {
+                var currNode = Y.one('.active'),
+                    nextNode = currNode.next();
+                currNode.removeClass('active');
+                nextNode.addClass('active');
+                addHandler();
+            });
+        }
+        addHandler();
+    });
+    </script>
   </head>
   <body>
-    <div id="header">
-    </div>
-    <div id="main">
-    </div>
-    <div id="footer">
-    </div>
+      <div id="intro-slide" class="slide active">
+        <div class="header">
+          <h2>Welcome to PollIn!</h2>
+        </div>
+      </div>
+      <div id="language-slide" class="slide">  
+        <div class="header">
+          <h2>Favorite School Subject?</h2>
+        </div>
+        <div class="main">
+        </div>
+        <div class="footer">
+        </div>
+      </div>
+      <div id="experience-slide" class="slide">
+        <div class="header">
+          <h2>Poll in with LinkedIn!</h2>
+        </div>
+        <div class="main">
+        </div>
+        <div class="footer">
+        </div>
+      </div>
+      <div id="language-slide" class="slide">
+        <div class="header">
+          <h2>Favorite Programming Language?</h2>
+        </div>
+        <div class="main">
+        </div>
+        <div class="footer">
+        </div>
+      </div>
+      <div id="thank-you-slide" class="slide">
+        <div class="header">
+          <h2>Thank you!</h2>
+        </div>
+        <div class="main">
+        </div>
+        <div class="footer">
+        </div>
+      </div>
   </body>
 </html>
 

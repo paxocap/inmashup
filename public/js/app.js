@@ -6,14 +6,14 @@ YUI({
                 fullpath: '/socket.io/socket.io.js'
             }
         },
-    }).use('app', 'transition', 'event-custom', 'charts', 'gallery-model-sync-socket', function (Y) {
-    var SlideshowApp, SlideModel, SlideList;
+    }).use('app', 'transition', 'charts', 'gallery-model-sync-socket', function (Y) {
+    var SlideshowApp, Signal;
 
     SlideshowApp = Y.Base.create('slideshowApp', Y.App,  [], {
         
-        slides: ['intro', 'language', 'something', 'lol'],
-
         initializer: function () {
+            this.set('forwardSignal', new Signal({id: 1234});
+            this.set('backwardSignal', new Signal({id: 4321});
             this.setHandler(0);
         },
 
@@ -50,31 +50,51 @@ YUI({
         },
 
         setHandler: function (index) {
-            var self = this;
+            var self = this,
+                slides = this.get('slides'),
+                forward = this.get('forwardSignal'),
+                backward = this.get('backwardSignal');
+                
+
             Y.once('keydown', function (e) {
                 if (e.keyCode === 39) {
-                    self.forwardTransition(self.slides[index], 
-                                           self.slides[index+1]);
-                    Y.fire('slides:forward');
+                    self.forwardTransition(slides[index], 
+                                           slides[index+1]);
+                    forward.set('message', new Date().toISOString());
+                    forward.save();
                     self.setHandler(index + 1);
                 } else if (e.keyCode === 37) {
-                    self.backwardTransition(self.slides[index],
-                                            self.slides[index-1]);
-                    Y.fire('slides:backward');
+                    self.backwardTransition(slides[index],
+                                            slides[index-1]);
+                    backward.set('message', new Date().toISOString());
+                    backward.save();
                     self.setHandler(index - 1);
                 } else {
                     self.setHandler(index);
                 }
             });
-        },
+        }
+    }, {
+        ATTRS: {
+            slides: {
+                value: ['intro', 'language', 'something', 'lol']
+            },
+            forwardSignal: {
+                value: null
+            },
+            backwardSignal: {
+                value: null
+            }
+        }
     });
 
-    SlideModel = Y.Base.create('slideModel', Y.Model, [Y.ModelSync.Socket], {
-
-    });
-
-    VoteModel = Y.Base.create('voteModel', Y.Model, [Y.ModelSync.Socket], {
-
+    Signal = Y.Base.create('signal', Y.Model, [Y.ModelSync.Socket], {
+        root: '/signals'
+    }, {
+        ATTRS: {
+            id: '',
+            message: ''
+        }
     });
 
     new SlideshowApp();
