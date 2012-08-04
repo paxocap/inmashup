@@ -1,0 +1,17 @@
+{
+    "name"       : "hackday",
+    "description": "SwankRank, rank everything!",
+    "version"    : "0.1.0",
+    "author"     : "Clarence Leung <cleung0@gmail.com> (http://github.com/clarle)",
+
+    "engines": {
+        "node": "0.6.x",
+        "npm" : "1.1.x"
+    },
+
+    "dependencies": {
+        "connect"     : ">=1.8.0 <2.0.0",
+        "express"     : "3.0.0beta4",
+        "socket.io"   : "0.9.6"
+    }
+}
