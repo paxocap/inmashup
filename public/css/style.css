@@ -16,6 +16,18 @@ body {
     margin-bottom: 30px;
 }
 
+#logo {
+    float: left;
+    margin-left: 230px;
+    margin-top: 2px;
+    background: url(../img/temp.png) no-repeat;
+    overflow: visible;
+    height: 52px;
+    width: 248px;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
 #search-box, #name-box, #email-box {
     float: left;
     height: 20px;
@@ -70,7 +82,7 @@ body {
     position: absolute;
     left: 218px;
     padding-top: 40px;
-    height: 600px;
+    height: 725px;
     background: #F0F0F0;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
@@ -416,11 +428,11 @@ body {
     font-size: 48px;
 }
 
-#welcome-title em {
+#welcome-title em, #welcome-sub em {
     color: #50A1CB;
 }
 
-#welcome-title b {
+#welcome-title b, #welcome-sub b{
     color: #C2FBE8;
 }
 
@@ -430,10 +442,6 @@ body {
     padding-top: 15px;
     text-align: center;
     font-size: 36px;
-}
-
-#welcome-sub em {
-    color: #50A1CB;
 }
 
 #world-map {

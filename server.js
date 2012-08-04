@@ -32,8 +32,8 @@ app.get('/', function (req, res) {
     res.render('index.html');
 });
 
-app.get('/master', function (req, res) {
-    res.render('index.html');
+app.get('/slideshow', function (req, res) {
+    res.render('slideshow.html');
 });
 
 var server = app.listen(80),
