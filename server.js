@@ -1,7 +1,10 @@
 var fs = require('fs'),
     express = require('express'),
     Collection = require('./lib/db').Collection,
-    app = module.exports = express();
+    Detector = require('./lib/mobile').Detector,
+    uaTest = new Detector();
+
+var app = module.exports = express();
 
 app.configure(function () {
     app.set("view options", {layout: false});
@@ -29,7 +32,11 @@ app.configure('production', function () {
 });
 
 app.get('/', function (req, res) {
-    res.render('index.html');
+    if (uaTest.isMobile(req)) {
+        res.render('mobile.html');
+    } else {
+        res.render('index.html');
+    }
 });
 
 app.get('/slideshow', function (req, res) {

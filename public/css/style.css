@@ -20,7 +20,7 @@ body {
     float: left;
     margin-left: 230px;
     margin-top: 2px;
-    background: url(../img/temp.png) no-repeat;
+    /* background: url(../img/temp.png) no-repeat; */
     overflow: visible;
     height: 52px;
     width: 248px;

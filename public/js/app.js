@@ -1,4 +1,12 @@
-YUI().use('app', 'transition', 'event-custom', 'charts', 'gallery-model-sync-socket', function (Y) {
+YUI({
+        gallery: 'gallery-2012.07.11-21-38',
+        filter: 'raw',
+        modules: {
+            'socket-io': {
+                fullpath: '/socket.io/socket.io.js'
+            }
+        },
+    }).use('app', 'transition', 'event-custom', 'charts', 'gallery-model-sync-socket', function (Y) {
     var SlideshowApp, SlideModel, SlideList;
 
     SlideshowApp = Y.Base.create('slideshowApp', Y.App,  [], {
@@ -54,12 +62,18 @@ YUI().use('app', 'transition', 'event-custom', 'charts', 'gallery-model-sync-soc
                                             self.slides[index-1]);
                     Y.fire('slides:backward');
                     self.setHandler(index - 1);
+                } else {
+                    self.setHandler(index);
                 }
             });
         },
     });
 
     SlideModel = Y.Base.create('slideModel', Y.Model, [Y.ModelSync.Socket], {
+
+    });
+
+    VoteModel = Y.Base.create('voteModel', Y.Model, [Y.ModelSync.Socket], {
 
     });
 
