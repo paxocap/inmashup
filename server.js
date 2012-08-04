@@ -36,7 +36,7 @@ app.get('/master', function (req, res) {
     res.render('index.html');
 });
 
-var server = app.listen(3000),
+var server = app.listen(80),
     io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function (socket) {
